@@ -367,28 +367,6 @@ select {
 }
 .radio-item:has(input:checked) label { color: var(--p); font-weight: 600; }
 
-/* ── FILE UPLOAD ───────────────────────────── */
-.file-zone {
-  border: 2px dashed var(--g5);
-  border-radius: var(--radius);
-  padding: 24px;
-  text-align: center;
-  cursor: pointer;
-  transition: border-color .2s, background .2s;
-  position: relative;
-}
-.file-zone:hover { border-color: var(--p3); background: var(--p-light); }
-.file-zone input[type=file] {
-  position: absolute; inset: 0;
-  opacity: 0; cursor: pointer;
-  width: 100%; height: 100%;
-  border: none; padding: 0; background: none; box-shadow: none;
-}
-.file-zone-icon { font-size: 28px; margin-bottom: 8px; }
-.file-zone p { font-size: 13px; color: var(--g3); }
-.file-zone p strong { color: var(--p2); }
-.file-zone p small { display: block; font-size: 11px; color: var(--g4); margin-top: 4px; }
-#cv-name, #cv2-name { font-size: 12px; color: var(--success); margin-top: 8px; font-weight: 500; }
 
 /* ── CONSENT ───────────────────────────────── */
 .consent-box {
@@ -749,29 +727,6 @@ footer strong { color: var(--white); }
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 3h12v1H2zm0 3h12v1H2zm0 3h8v1H2z"/></svg>
               Motivation
             </div>
-            <div class="field-row full">
-              <div class="field">
-                <label for="b-motivation">Brief statement of motivation <span class="req">*</span> <span class="opt">(max 300 words)</span></label>
-                <textarea id="b-motivation" name="motivation" rows="5"
-                  placeholder="Please briefly explain why you would like to join the PedPer Editorial Board and how your expertise aligns with the journal's scope." required></textarea>
-                <span class="field-err" id="b-motivation-err">Please write a brief motivation statement.</span>
-              </div>
-            </div>
-            <div class="field-row full">
-              <div class="field">
-                <label for="b-cv">CV / Academic Profile <span class="req">*</span></label>
-                <div class="file-zone" id="b-cv-zone">
-                  <input type="file" id="b-cv-file" name="cv"
-                    accept=".pdf,.doc,.docx" onchange="showFileName(this,'cv-name')">
-                  <div class="file-zone-icon">📄</div>
-                  <p><strong>Click to upload</strong> or drag and drop your CV</p>
-                  <p><small>PDF or Word · max 5 MB</small></p>
-                  <div id="cv-name"></div>
-                </div>
-                <span class="field-err" id="b-cv-err">Please attach your CV.</span>
-              </div>
-            </div>
-          </div>
 
           <!-- ── Consent ─────────────────────── -->
           <div class="consent-box" style="margin-bottom:16px">
@@ -982,18 +937,6 @@ footer strong { color: var(--white); }
                   placeholder="Briefly describe your research background and/or review experience."></textarea>
               </div>
             </div>
-            <div class="field-row full">
-              <div class="field">
-                <label for="r-cv">CV / Academic Profile <span class="opt">(optional)</span></label>
-                <div class="file-zone">
-                  <input type="file" id="r-cv-file" name="cv"
-                    accept=".pdf,.doc,.docx" onchange="showFileName(this,'cv2-name')">
-                  <div class="file-zone-icon">📄</div>
-                  <p><strong>Click to upload</strong> or drag and drop your CV</p>
-                  <p><small>PDF or Word · max 5 MB</small></p>
-                  <div id="cv2-name"></div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -1049,12 +992,6 @@ function switchTab(name, btn) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ══ FILE NAME DISPLAY ═══════════════════════ */
-function showFileName(input, targetId) {
-  const el = document.getElementById(targetId);
-  if (input.files && input.files[0]) {
-    el.textContent = '✓ ' + input.files[0].name;
-  }
 }
 
 /* ══ VALIDATION HELPERS ══════════════════════ */
@@ -1123,12 +1060,6 @@ document.getElementById('board-form').addEventListener('submit', async function(
   markField(pub, noPub); showErr('b-pub-err', noPub);
   if (noPub) valid = false;
 
-  // Motivation
-  const mot = document.getElementById('b-motivation');
-  const noMot = !mot.value.trim();
-  markField(mot, noMot); showErr('b-motivation-err', noMot);
-  if (noMot) valid = false;
-
   // Consent
   const consent = document.getElementById('b-consent');
   showErr('b-consent-err', !consent.checked);
@@ -1148,7 +1079,7 @@ document.getElementById('board-form').addEventListener('submit', async function(
 
     if (res.ok) {
       this.reset();
-      document.getElementById('cv-name').textContent = '';
+
       document.getElementById('b-success').style.display = 'flex';
       document.getElementById('b-error').style.display = 'none';
       document.getElementById('b-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
