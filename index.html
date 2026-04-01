@@ -8,12 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-/* ══════════════════════════════════════════
-   PEDPER APPLICATION FORMS
-   Aesthetic: Editorial · Refined · Academic
-   Formspree-powered · GitHub Pages ready
-══════════════════════════════════════════ */
-
 :root {
   --p:      #3B2A7A;
   --p2:     #5C4DB1;
@@ -37,9 +31,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   background: var(--g7);
@@ -47,8 +39,6 @@ body {
   line-height: 1.65;
   min-height: 100vh;
 }
-
-/* ── Background decoration ─────────────────── */
 body::before {
   content: '';
   position: fixed; inset: 0; z-index: -1;
@@ -58,13 +48,11 @@ body::before {
     var(--g7);
 }
 
-/* ── TOP STRIPE ────────────────────────────── */
 .top-stripe {
   height: 4px;
   background: linear-gradient(90deg, var(--p) 0%, var(--p2) 50%, var(--amber) 100%);
 }
 
-/* ── NAV ───────────────────────────────────── */
 nav {
   background: var(--white);
   border-bottom: 1px solid var(--g6);
@@ -107,7 +95,6 @@ nav {
 }
 .nav-link:hover { color: var(--p2); }
 
-/* ── HERO ──────────────────────────────────── */
 .hero {
   max-width: 860px; margin: 0 auto;
   padding: clamp(36px,6vw,64px) clamp(20px,5vw,60px) 0;
@@ -130,9 +117,7 @@ nav {
   line-height: 1.2; margin-bottom: 16px;
   letter-spacing: -.5px;
 }
-.hero h1 em {
-  font-style: italic; color: var(--p2);
-}
+.hero h1 em { font-style: italic; color: var(--p2); }
 .hero-sub {
   font-size: 15px; color: var(--g3);
   max-width: 560px; margin: 0 auto 32px;
@@ -151,7 +136,6 @@ nav {
 }
 .hbadge span { font-size: 13px; }
 
-/* ── TABS ──────────────────────────────────── */
 .tabs-wrap {
   max-width: 860px; margin: 0 auto;
   padding: 0 clamp(20px,5vw,60px);
@@ -190,12 +174,10 @@ nav {
   background: var(--p-light); color: var(--p);
 }
 
-/* ── FORM PANEL ────────────────────────────── */
 .form-panel { display: none; }
 .form-panel.active { display: block; animation: fadeIn .3s ease; }
 @keyframes fadeIn { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:none } }
 
-/* ── FORM CARD ─────────────────────────────── */
 .form-card {
   background: var(--white);
   border-radius: 16px;
@@ -240,10 +222,7 @@ nav {
 .form-body { padding: 36px; }
 @media(max-width:600px){ .form-body { padding: 24px 20px; } }
 
-/* ── FIELD GROUPS ──────────────────────────── */
-.field-group {
-  margin-bottom: 28px;
-}
+.field-group { margin-bottom: 28px; }
 .field-group-title {
   font-size: 10.5px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 1.5px;
@@ -253,9 +232,7 @@ nav {
   margin-bottom: 20px;
   display: flex; align-items: center; gap: 8px;
 }
-.field-group-title svg {
-  width: 14px; height: 14px; opacity: .7;
-}
+.field-group-title svg { width: 14px; height: 14px; opacity: .7; }
 
 .field-row {
   display: grid;
@@ -266,7 +243,6 @@ nav {
 @media(max-width:600px){ .field-row { grid-template-columns: 1fr; } }
 .field-row.full { grid-template-columns: 1fr; }
 
-/* ── FIELD ─────────────────────────────────── */
 .field { display: flex; flex-direction: column; gap: 6px; }
 label {
   font-size: 12.5px; font-weight: 600;
@@ -304,7 +280,6 @@ input.error, select.error, textarea.error {
 }
 textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 
-/* ── SELECT custom arrow ───────────────────── */
 select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239896A8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -312,7 +287,6 @@ select {
   padding-right: 36px;
 }
 
-/* ── CHECKBOXES ────────────────────────────── */
 .check-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -344,10 +318,7 @@ select {
 }
 .check-item:has(input:checked) label { color: var(--p); font-weight: 500; }
 
-/* ── RADIO ─────────────────────────────────── */
-.radio-row {
-  display: flex; flex-wrap: wrap; gap: 10px;
-}
+.radio-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .radio-item {
   display: flex; align-items: center; gap: 8px;
   padding: 8px 14px;
@@ -367,8 +338,6 @@ select {
 }
 .radio-item:has(input:checked) label { color: var(--p); font-weight: 600; }
 
-
-/* ── CONSENT ───────────────────────────────── */
 .consent-box {
   background: var(--g7);
   border: 1.5px solid var(--g5);
@@ -385,7 +354,6 @@ select {
 .consent-box p { font-size: 12.5px; color: var(--g3); line-height: 1.6; }
 .consent-box a { color: var(--p2); }
 
-/* ── SUBMIT ────────────────────────────────── */
 .submit-row {
   display: flex; align-items: center;
   justify-content: space-between;
@@ -425,7 +393,6 @@ select {
 .btn-submit.loading .btn-text { display: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── SUCCESS / ERROR MESSAGES ──────────────── */
 .form-message {
   display: none;
   border-radius: var(--radius);
@@ -446,14 +413,12 @@ select {
 }
 .form-message .msg-icon { font-size: 20px; margin-right: 8px; }
 
-/* ── FIELD ERROR HINTS ─────────────────────── */
 .field-err {
   font-size: 11.5px; color: var(--error);
   display: none; margin-top: 3px;
 }
 .field-err.show { display: block; }
 
-/* ── INFO BOX ──────────────────────────────── */
 .info-card {
   background: var(--white);
   border-radius: 16px;
@@ -465,7 +430,6 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   gap: 24px;
 }
-.info-item {}
 .info-item .label {
   font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
   text-transform: uppercase; color: var(--p2);
@@ -475,7 +439,6 @@ select {
 .info-item a { color: var(--p2); text-decoration: none; }
 .info-item a:hover { text-decoration: underline; }
 
-/* ── FOOTER ────────────────────────────────── */
 footer {
   background: var(--p);
   color: rgba(255,255,255,.6);
@@ -487,7 +450,6 @@ footer {
 footer a { color: rgba(255,255,255,.75); text-decoration: none; }
 footer strong { color: var(--white); }
 
-/* ── REQUIRED NOTE ─────────────────────────── */
 .required-note {
   font-size: 12px; color: var(--g4);
   margin-bottom: 24px;
@@ -499,10 +461,9 @@ footer strong { color: var(--white); }
 
 <div class="top-stripe"></div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="https://pedagogicalperspective.com" target="_blank" class="nav-brand" style="text-decoration:none">
+    <a href="https://pedagogicalperspective.com" target="_blank" class="nav-brand">
       <div class="nav-monogram">PP</div>
       <div class="nav-name">
         Pedagogical Perspective
@@ -513,7 +474,6 @@ footer strong { color: var(--white); }
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">📢 Open Call</div>
   <h1>Join the <em>PedPer</em> Team</h1>
@@ -527,22 +487,19 @@ footer strong { color: var(--white); }
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="tabs-wrap">
 
-  <!-- TABS -->
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('board', this)">
+    <button class="tab-btn active" data-tab="board">
       <div class="tab-icon">🎓</div>
       Editorial Board Application
     </button>
-    <button class="tab-btn" onclick="switchTab('reviewer', this)">
+    <button class="tab-btn" data-tab="reviewer">
       <div class="tab-icon">🔍</div>
       Reviewer Application
     </button>
   </div>
 
-  <!-- INFO STRIP -->
   <div class="info-card">
     <div class="info-item">
       <div class="label">Deadline</div>
@@ -558,13 +515,11 @@ footer strong { color: var(--white); }
     </div>
     <div class="info-item">
       <div class="label">Publication</div>
-      <p>Biannual — March & October</p>
+      <p>Biannual — March &amp; September</p>
     </div>
   </div>
 
-  <!-- ═══════════════════════════════════════
-       PANEL 1 — EDITORIAL BOARD
-  ═══════════════════════════════════════ -->
+  <!-- ═══ PANEL 1 — EDITORIAL BOARD ═══ -->
   <div class="form-panel active" id="panel-board">
     <div class="form-card">
       <div class="form-card-head">
@@ -575,20 +530,15 @@ footer strong { color: var(--white); }
       <div class="form-body">
         <p class="required-note">Fields marked <span>*</span> are required.</p>
 
-        
-        
-        
         <form id="board-form"
               action="https://formspree.io/f/mnjodyvo"
               method="POST"
-              enctype="multipart/form-data"
               novalidate>
 
-          <!-- Hidden subject -->
           <input type="hidden" name="_subject" value="[PedPer] New Editorial Board Application">
           <input type="hidden" name="_replyto" id="board-replyto">
 
-          <!-- ── 1. Personal Information ──────── -->
+          <!-- 1. Personal Information -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 5a5 5 0 0 0-10 0h10z"/></svg>
@@ -627,7 +577,7 @@ footer strong { color: var(--white); }
             </div>
           </div>
 
-          <!-- ── 2. Institutional Affiliation ─── -->
+          <!-- 2. Institutional Affiliation -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v2H2zM1 5v9h2V7h10v7h2V5H1zm4 4h2v5H5V9zm4 0h2v5H9V9z"/></svg>
@@ -658,7 +608,7 @@ footer strong { color: var(--white); }
             </div>
           </div>
 
-          <!-- ── 3. Research Expertise ─────────── -->
+          <!-- 3. Research Expertise -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5zm1 2h4v1H6V3zm0 3h4v1H6V6zm0 3h2v1H6V9z"/></svg>
@@ -668,18 +618,18 @@ footer strong { color: var(--white); }
               Select all areas in which you have active research and/or publication experience. <span style="color:var(--amber)">*</span>
             </p>
             <div class="check-grid" id="b-fields">
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Technology, AI & Digital Learning"><label>Ed. Technology, AI & Digital Learning</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Teacher Education & Professional Development"><label>Teacher Education & Professional Development</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Language Education & Applied Linguistics"><label>Language Education & Applied Linguistics</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Technology, AI & Digital Learning"><label>Ed. Technology, AI &amp; Digital Learning</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Teacher Education & Professional Development"><label>Teacher Education &amp; Professional Development</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Language Education & Applied Linguistics"><label>Language Education &amp; Applied Linguistics</label></label>
               <label class="check-item"><input type="checkbox" name="expertise[]" value="Early Childhood Education"><label>Early Childhood Education</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Inclusive, Special & Multicultural Education"><label>Inclusive, Special & Multicultural Education</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Social Studies, Citizenship & Comparative Education"><label>Social Studies, Citizenship & Comparative Ed.</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="STEM, Science & Mathematics Education"><label>STEM, Science & Mathematics Education</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Assessment, Measurement & Evaluation"><label>Assessment, Measurement & Evaluation</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Learning Sciences & Educational Psychology"><label>Learning Sciences & Educational Psychology</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Research Methods & Methodology"><label>Research Methods & Methodology</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Curriculum Design & Instructional Strategies"><label>Curriculum Design & Instructional Strategies</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Policy & Higher Education Pedagogy"><label>Educational Policy & Higher Ed. Pedagogy</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Inclusive, Special & Multicultural Education"><label>Inclusive, Special &amp; Multicultural Education</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Social Studies, Citizenship & Comparative Education"><label>Social Studies, Citizenship &amp; Comparative Ed.</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="STEM, Science & Mathematics Education"><label>STEM, Science &amp; Mathematics Education</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Assessment, Measurement & Evaluation"><label>Assessment, Measurement &amp; Evaluation</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Learning Sciences & Educational Psychology"><label>Learning Sciences &amp; Educational Psychology</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Research Methods & Methodology"><label>Research Methods &amp; Methodology</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Curriculum Design & Instructional Strategies"><label>Curriculum Design &amp; Instructional Strategies</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Policy & Higher Education Pedagogy"><label>Educational Policy &amp; Higher Ed. Pedagogy</label></label>
               <label class="check-item"><input type="checkbox" name="expertise[]" value="General Education Research"><label>General Education Research</label></label>
             </div>
             <div class="field" style="margin-top:12px">
@@ -689,7 +639,7 @@ footer strong { color: var(--white); }
             <span class="field-err" id="b-fields-err" style="margin-top:6px">Please select at least one area.</span>
           </div>
 
-          <!-- ── 4. Academic Profile ────────────── -->
+          <!-- 4. Academic Profile -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 1 0 0 10A5 5 0 0 0 8 1zM3 8a5 5 0 0 1 9.9-1h-2.06A3 3 0 1 0 11 8H3z"/></svg>
@@ -721,21 +671,13 @@ footer strong { color: var(--white); }
             </div>
           </div>
 
-          <!-- ── 5. Motivation ─────────────────── -->
-          <div class="field-group">
-            <div class="field-group-title">
-              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 3h12v1H2zm0 3h12v1H2zm0 3h8v1H2z"/></svg>
-              Motivation
-            </div>
-
-          <!-- ── Consent ─────────────────────── -->
+          <!-- Consent -->
           <div class="consent-box" style="margin-bottom:16px">
             <input type="checkbox" id="b-consent" name="consent" value="yes" required>
             <p>I confirm that the information provided is accurate and complete. I agree that my contact details may be stored and used by <strong>Pedagogical Perspective</strong> for editorial correspondence purposes in line with the journal's <a href="https://pedagogicalperspective.com/index.php/pub/about/privacy" target="_blank">Privacy Policy</a>. <span style="color:var(--amber)">*</span></p>
           </div>
           <span class="field-err" id="b-consent-err">You must accept the terms to proceed.</span>
 
-          <!-- ── Submit ──────────────────────── -->
           <div class="submit-row">
             <p class="submit-note">You will receive a confirmation at <strong>your e-mail</strong> after submission.</p>
             <button type="submit" class="btn-submit" id="b-submit">
@@ -744,7 +686,6 @@ footer strong { color: var(--white); }
             </button>
           </div>
 
-          <!-- ── Messages ───────────────────── -->
           <div class="form-message success" id="b-success">
             <span class="msg-icon">✅</span>
             <strong>Application received!</strong> Thank you for your interest in joining the PedPer Editorial Board. We will review your application and be in touch within 4–6 weeks.
@@ -760,9 +701,7 @@ footer strong { color: var(--white); }
   </div><!-- /panel-board -->
 
 
-  <!-- ═══════════════════════════════════════
-       PANEL 2 — REVIEWER
-  ═══════════════════════════════════════ -->
+  <!-- ═══ PANEL 2 — REVIEWER ═══ -->
   <div class="form-panel" id="panel-reviewer">
     <div class="form-card">
       <div class="form-card-head">
@@ -773,17 +712,15 @@ footer strong { color: var(--white); }
       <div class="form-body">
         <p class="required-note">Fields marked <span>*</span> are required.</p>
 
-        
         <form id="reviewer-form"
               action="https://formspree.io/f/maqlozjk"
               method="POST"
-              enctype="multipart/form-data"
               novalidate>
 
           <input type="hidden" name="_subject" value="[PedPer] New Reviewer Application">
           <input type="hidden" name="_replyto" id="rev-replyto">
 
-          <!-- ── 1. Personal Information ──────── -->
+          <!-- 1. Personal Information -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 5a5 5 0 0 0-10 0h10z"/></svg>
@@ -823,7 +760,7 @@ footer strong { color: var(--white); }
             </div>
           </div>
 
-          <!-- ── 2. Affiliation ─────────────── -->
+          <!-- 2. Affiliation -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v2H2zM1 5v9h2V7h10v7h2V5H1zm4 4h2v5H5V9zm4 0h2v5H9V9z"/></svg>
@@ -843,7 +780,7 @@ footer strong { color: var(--white); }
             </div>
           </div>
 
-          <!-- ── 3. Review Expertise ────────── -->
+          <!-- 3. Review Expertise -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M5 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5zm1 2h4v1H6V3zm0 3h4v1H6V6zm0 3h2v1H6V9z"/></svg>
@@ -853,23 +790,23 @@ footer strong { color: var(--white); }
               Select your areas of expertise for manuscript review. <span style="color:var(--amber)">*</span>
             </p>
             <div class="check-grid" id="r-fields">
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Technology, AI & Digital Learning"><label>Ed. Technology, AI & Digital Learning</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Teacher Education & Professional Development"><label>Teacher Education & Professional Development</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Language Education & Applied Linguistics"><label>Language Education & Applied Linguistics</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Technology, AI & Digital Learning"><label>Ed. Technology, AI &amp; Digital Learning</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Teacher Education & Professional Development"><label>Teacher Education &amp; Professional Development</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Language Education & Applied Linguistics"><label>Language Education &amp; Applied Linguistics</label></label>
               <label class="check-item"><input type="checkbox" name="expertise[]" value="Early Childhood Education"><label>Early Childhood Education</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Inclusive, Special & Multicultural Education"><label>Inclusive, Special & Multicultural Education</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Social Studies, Citizenship & Comparative Education"><label>Social Studies, Citizenship & Comparative Ed.</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="STEM, Science & Mathematics Education"><label>STEM, Science & Mathematics Education</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Assessment, Measurement & Evaluation"><label>Assessment, Measurement & Evaluation</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Learning Sciences & Educational Psychology"><label>Learning Sciences & Educational Psychology</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Research Methods & Methodology"><label>Research Methods & Methodology</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Curriculum Design & Instructional Strategies"><label>Curriculum Design & Instructional Strategies</label></label>
-              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Policy & Higher Education Pedagogy"><label>Educational Policy & Higher Ed. Pedagogy</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Inclusive, Special & Multicultural Education"><label>Inclusive, Special &amp; Multicultural Education</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Social Studies, Citizenship & Comparative Education"><label>Social Studies, Citizenship &amp; Comparative Ed.</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="STEM, Science & Mathematics Education"><label>STEM, Science &amp; Mathematics Education</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Assessment, Measurement & Evaluation"><label>Assessment, Measurement &amp; Evaluation</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Learning Sciences & Educational Psychology"><label>Learning Sciences &amp; Educational Psychology</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Research Methods & Methodology"><label>Research Methods &amp; Methodology</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Curriculum Design & Instructional Strategies"><label>Curriculum Design &amp; Instructional Strategies</label></label>
+              <label class="check-item"><input type="checkbox" name="expertise[]" value="Educational Policy & Higher Education Pedagogy"><label>Educational Policy &amp; Higher Ed. Pedagogy</label></label>
             </div>
             <span class="field-err" id="r-fields-err" style="margin-top:6px">Please select at least one area.</span>
           </div>
 
-          <!-- ── 4. Review Preferences ──────── -->
+          <!-- 4. Review Preferences -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M1 3h14v2H1zm0 4h14v2H1zm0 4h9v2H1z"/></svg>
@@ -907,11 +844,11 @@ footer strong { color: var(--white); }
             </div>
           </div>
 
-          <!-- ── 5. Background ──────────────── -->
+          <!-- 5. Background & Profile -->
           <div class="field-group">
             <div class="field-group-title">
               <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a5 5 0 1 0 0 10A5 5 0 0 0 8 1zM3 8a5 5 0 0 1 9.9-1h-2.06A3 3 0 1 0 11 8H3z"/></svg>
-              Background & Profile
+              Background &amp; Profile
             </div>
             <div class="field-row">
               <div class="field">
@@ -937,17 +874,15 @@ footer strong { color: var(--white); }
                   placeholder="Briefly describe your research background and/or review experience."></textarea>
               </div>
             </div>
-            </div>
-          </div>
+          </div><!-- /field-group Background -->
 
-          <!-- ── Consent ─────────────────────── -->
+          <!-- Consent -->
           <div class="consent-box" style="margin-bottom:16px">
             <input type="checkbox" id="r-consent" name="consent" value="yes" required>
             <p>I confirm that the information provided is accurate. I agree that my contact details may be stored and used by <strong>Pedagogical Perspective</strong> for editorial correspondence purposes in line with the journal's <a href="https://pedagogicalperspective.com/index.php/pub/about/privacy" target="_blank">Privacy Policy</a>. <span style="color:var(--amber)">*</span></p>
           </div>
           <span class="field-err" id="r-consent-err">You must accept the terms to proceed.</span>
 
-          <!-- ── Submit ──────────────────────── -->
           <div class="submit-row">
             <p class="submit-note">You will receive a confirmation at <strong>your e-mail</strong> after submission.</p>
             <button type="submit" class="btn-submit" id="r-submit">
@@ -972,7 +907,6 @@ footer strong { color: var(--white); }
 
 </div><!-- /tabs-wrap -->
 
-<!-- FOOTER -->
 <footer>
   <strong>Pedagogical Perspective (PedPer)</strong> · eISSN 2822-4841 ·
   <a href="https://pedagogicalperspective.com" target="_blank">pedagogicalperspective.com</a> ·
@@ -982,21 +916,22 @@ footer strong { color: var(--white); }
   </small>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ══ TAB SWITCH ══════════════════════════════ */
-function switchTab(name, btn) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('panel-' + name).classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-}
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var name = this.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.form-panel').forEach(function(p) { p.classList.remove('active'); });
+    this.classList.add('active');
+    document.getElementById('panel-' + name).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
 
 /* ══ VALIDATION HELPERS ══════════════════════ */
 function showErr(id, show) {
-  const el = document.getElementById(id);
+  var el = document.getElementById(id);
   if (el) el.classList.toggle('show', show);
 }
 function markField(el, error) {
@@ -1007,86 +942,73 @@ function markField(el, error) {
 /* ══ BOARD FORM SUBMIT ═══════════════════════ */
 document.getElementById('board-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  let valid = true;
+  var valid = true;
 
-  // Mirror email to hidden replyto field
-  document.getElementById('board-replyto').value =
-    document.getElementById('b-email').value;
+  document.getElementById('board-replyto').value = document.getElementById('b-email').value;
 
-  // Title
-  const title = document.getElementById('b-title');
-  const noTitle = !title.value;
+  var title = document.getElementById('b-title');
+  var noTitle = !title.value;
   markField(title, noTitle); showErr('b-title-err', noTitle);
   if (noTitle) valid = false;
 
-  // Name
-  const name = document.getElementById('b-name');
-  const noName = !name.value.trim();
+  var name = document.getElementById('b-name');
+  var noName = !name.value.trim();
   markField(name, noName); showErr('b-name-err', noName);
   if (noName) valid = false;
 
-  // Email
-  const email = document.getElementById('b-email');
-  const noEmail = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+  var email = document.getElementById('b-email');
+  var noEmail = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
   markField(email, noEmail); showErr('b-email-err', noEmail);
   if (noEmail) valid = false;
 
-  // Department
-  const dept = document.getElementById('b-dept');
-  const noDept = !dept.value.trim();
+  var dept = document.getElementById('b-dept');
+  var noDept = !dept.value.trim();
   markField(dept, noDept); showErr('b-dept-err', noDept);
   if (noDept) valid = false;
 
-  // University
-  const uni = document.getElementById('b-uni');
-  const noUni = !uni.value.trim();
+  var uni = document.getElementById('b-uni');
+  var noUni = !uni.value.trim();
   markField(uni, noUni); showErr('b-uni-err', noUni);
   if (noUni) valid = false;
 
-  // Country
-  const cnt = document.getElementById('b-country');
-  const noCnt = !cnt.value.trim();
+  var cnt = document.getElementById('b-country');
+  var noCnt = !cnt.value.trim();
   markField(cnt, noCnt); showErr('b-country-err', noCnt);
   if (noCnt) valid = false;
 
-  // Fields
-  const checked = document.querySelectorAll('#b-fields input:checked').length;
+  var checked = document.querySelectorAll('#b-fields input:checked').length;
   showErr('b-fields-err', checked === 0);
   if (checked === 0) valid = false;
 
-  // Publications
-  const pub = document.getElementById('b-pub');
-  const noPub = !pub.value;
+  var pub = document.getElementById('b-pub');
+  var noPub = !pub.value;
   markField(pub, noPub); showErr('b-pub-err', noPub);
   if (noPub) valid = false;
 
-  // Consent
-  const consent = document.getElementById('b-consent');
+  var consent = document.getElementById('b-consent');
   showErr('b-consent-err', !consent.checked);
   if (!consent.checked) valid = false;
 
   if (!valid) return;
 
-  const btn = document.getElementById('b-submit');
+  var btn = document.getElementById('b-submit');
   btn.classList.add('loading');
 
   try {
-    const data = new FormData(this);
-    const res = await fetch(this.action, {
+    var data = new FormData(this);
+    var res = await fetch(this.action, {
       method: 'POST', body: data,
       headers: { 'Accept': 'application/json' }
     });
-
     if (res.ok) {
       this.reset();
-
       document.getElementById('b-success').style.display = 'flex';
       document.getElementById('b-error').style.display = 'none';
       document.getElementById('b-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     } else {
       throw new Error();
     }
-  } catch {
+  } catch(err) {
     document.getElementById('b-error').style.display = 'flex';
   } finally {
     btn.classList.remove('loading');
@@ -1096,48 +1018,64 @@ document.getElementById('board-form').addEventListener('submit', async function(
 /* ══ REVIEWER FORM SUBMIT ════════════════════ */
 document.getElementById('reviewer-form').addEventListener('submit', async function(e) {
   e.preventDefault();
-  let valid = true;
+  var valid = true;
 
-  document.getElementById('rev-replyto').value =
-    document.getElementById('r-email').value;
+  document.getElementById('rev-replyto').value = document.getElementById('r-email').value;
 
-  const checks = [
-    ['r-title',    'r-title-err',    el => !el.value],
-    ['r-name',     'r-name-err',     el => !el.value.trim()],
-    ['r-uni',      'r-uni-err',      el => !el.value.trim()],
-    ['r-country',  'r-country-err',  el => !el.value.trim()],
-    ['r-capacity', 'r-capacity-err', el => !el.value],
-    ['r-languages','r-languages-err',el => !el.value.trim()],
+  var checks = [
+    ['r-title',    'r-title-err',    function(el) { return !el.value; }],
+    ['r-name',     'r-name-err',     function(el) { return !el.value.trim(); }],
+    ['r-uni',      'r-uni-err',      function(el) { return !el.value.trim(); }],
+    ['r-country',  'r-country-err',  function(el) { return !el.value.trim(); }],
+    ['r-capacity', 'r-capacity-err', function(el) { return !el.value; }],
+    ['r-languages','r-languages-err',function(el) { return !el.value.trim(); }],
   ];
 
-  // Email
-  const email = document.getElementById('r-email');
-  const noEmail = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+  var email = document.getElementById('r-email');
+  var noEmail = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
   markField(email, noEmail); showErr('r-email-err', noEmail);
   if (noEmail) valid = false;
 
-  checks.forEach(([id, errId, test]) => {
-    const el = document.getElementById(id);
-    const bad = test(el);
-    markField(el, bad); showErr(errId, bad);
+  checks.forEach(function(item) {
+    var el = document.getElementById(item[0]);
+    var bad = item[2](el);
+    markField(el, bad); showErr(item[1], bad);
     if (bad) valid = false;
   });
 
-  const rChecked = document.querySelectorAll('#r-fields input:checked').length;
+  var rChecked = document.querySelectorAll('#r-fields input:checked').length;
   showErr('r-fields-err', rChecked === 0);
   if (rChecked === 0) valid = false;
 
-  const consent = document.getElementById('r-consent');
-  showErr('r-consent-err', !consent.checked);
-  if (!consent.checked) valid = false;
+  var rConsent = document.getElementById('r-consent');
+  showErr('r-consent-err', !rConsent.checked);
+  if (!rConsent.checked) valid = false;
 
   if (!valid) return;
 
-  const btn = document.getElementById('r-submit');
+  var btn = document.getElementById('r-submit');
   btn.classList.add('loading');
 
   try {
-    const data = new FormData(this);
-    const res = await fetch(this.action, {
+    var data = new FormData(this);
+    var res = await fetch(this.action, {
       method: 'POST', body: data,
       headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      this.reset();
+      document.getElementById('r-success').style.display = 'flex';
+      document.getElementById('r-error').style.display = 'none';
+      document.getElementById('r-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      throw new Error();
+    }
+  } catch(err) {
+    document.getElementById('r-error').style.display = 'flex';
+  } finally {
+    btn.classList.remove('loading');
+  }
+});
+</script>
+</body>
+</html>
